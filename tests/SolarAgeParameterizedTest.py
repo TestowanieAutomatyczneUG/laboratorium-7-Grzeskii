@@ -26,5 +26,20 @@ class SolarAgeParameterizedTest(unittest.TestCase):
         self.assertRaisesRegex(Exception, expected, self.temp.game, seconds, planet)
 
 
+@parameterized_class(("seconds", "planet", "expected"), [
+    (521521521, "Merkury", 68.62),
+    (598218952198, "saturn", 643.74),
+    (1214211111211, "Uran", 4576.89),
+    (421421412, "Mars", 7.1)
+])
+class SolarAgeParameterizedTestClass(unittest.TestCase):
+
+    def setUp(self):
+        self.temp = SolarAge()
+
+    def test_solar_age_positive_class(self):
+        self.assertEqual(self.temp.game(self.seconds, self.planet), self.expected)
+
+
 if __name__ == '__main__':
     unittest.main()
