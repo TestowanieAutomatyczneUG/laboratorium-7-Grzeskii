@@ -1,7 +1,6 @@
 import unittest
 from sample.Pangram import *
 
-
 class PangramParametrizedFile(unittest.TestCase):
 
     def test_from_file(self):
