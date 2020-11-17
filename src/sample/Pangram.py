@@ -8,7 +8,5 @@ class IsPangram:
         word = word.lower()
         for letter in letters:
             if letter not in word:
-                return False
-        return True
-
-
+                return "False"
+        return "True"
